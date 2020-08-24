@@ -1,0 +1,12 @@
+<%- include ("partials/header.ejs") %>
+
+<form class="form-initial" action="/register", method="POST">
+    <h1 class="h2 mb-3 font-weight-normal text-center">Register</h1>
+    <label for="inputUsername" class="sr-only">Username</label>
+    <input type="text" id="inputUsername" class="form-control" placeholder="Username" name="username" required autofocus>
+    <label for="inputPassword" class="sr-only">Password</label>
+    <input type="password" id="inputPassword" class="form-control" placeholder="Password" name="password" required>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign Up</button>
+  </form>
+
+<%- include ("partials/footer.ejs") %>
