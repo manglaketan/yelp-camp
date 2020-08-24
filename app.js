@@ -20,7 +20,7 @@ var commentRoutes = require("./routes/comments"),
 
 // seedDB();
 // mongoose.connect("mongodb://localhost/yelp_camp", { useNewUrlParser: true,  useUnifiedTopology: true});
-mongoose.connect("mongodb+srv://ketan:missus%402308@yelpcamp.1s7te.mongodb.net/yelpcamp?retryWrites=true&w=majority", { useNewUrlParser: true,  useUnifiedTopology: true});
+mongoose.connect(process.env.DATABASEURI || "mongodb://localhost/yelp_camp", { useNewUrlParser: true,  useUnifiedTopology: true});
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(__dirname + "/public"));
@@ -53,4 +53,4 @@ app.use("/campgrounds/:id/comments", commentRoutes);
 app.use("/", indexRoutes);
 app.use("/campgrounds", campgroundRoutes);
 
-app.listen(process.env.PORT, process.env.IP);
+app.listen(process.env.PORT||3000, process.env.IP);
